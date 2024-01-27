@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class InputController {
 
     @GetMapping("/input")
-    public String getInput(@RequestParam(name = "previous", required = false) String previous, Model model) {
-
-        model.addAttribute("previous", previous);
-
-        // input.htmlに画面遷移
+    public String getInput() {
         return "input";
-
     }
 
+    @GetMapping("/input/")
+    public String getPrevious(@RequestParam ("previous") String previous, Model model) {
+        model.addAttribute("previous", previous);
+        return "input";
+    }
 }
-

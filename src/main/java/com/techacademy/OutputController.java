@@ -5,16 +5,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-        @Controller
-        public class OutputController {
+@Controller
+public class OutputController {
 
-        @PostMapping("/output")
-        public String postOutput(@RequestParam("val") String val, Model model) {
-            // フォームから送信されてきた値をModelに登録
-            model.addAttribute("val", val);
-            // output.htmlに画面遷移
-            return "output";
-
-        }
-
+    @PostMapping("/output")
+    public String postOutput(@RequestParam("val") String val, Model model) {
+        model.addAttribute("val", val);
+        return "output";
     }
+}
