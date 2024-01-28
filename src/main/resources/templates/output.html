@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Thymeleaf課題</h1>
-    <h2>入力画面</h2>
+    <h2 th:text="#{content.title.hh2}"></h2>
     <p th:text="'入力された値は「' + ${val} + '」です。'"></p>
     <p><a th:href="@{/input/(previous=${val})}" th:text="#{content.message.3}"></a></p>
 </body>
